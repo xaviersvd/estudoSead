@@ -1,0 +1,382 @@
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);color:var(--color-text-primary)}
+.header{padding:1.5rem 0 1rem;border-bottom:0.5px solid var(--color-border-tertiary);margin-bottom:1.5rem}
+.subtitle{font-size:13px;color:var(--color-text-secondary);margin-top:4px}
+.meta-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:1.5rem}
+.meta-card{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px;text-align:center}
+.meta-label{font-size:11px;color:var(--color-text-secondary);margin-bottom:4px}
+.meta-value{font-size:16px;font-weight:500;color:var(--color-text-primary)}
+.fase{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);margin-bottom:1rem;overflow:hidden}
+.fase-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;cursor:pointer;user-select:none}
+.fase-title{font-size:15px;font-weight:500}
+.fase-badge{font-size:11px;padding:3px 10px;border-radius:20px}
+.fase-meta{font-size:12px;color:var(--color-text-secondary);margin-top:2px}
+.fase-body{padding:0 16px 16px;display:none}
+.disc{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);margin-top:12px;overflow:hidden}
+.disc-header{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;cursor:pointer;background:var(--color-background-secondary)}
+.disc-name{font-size:14px;font-weight:500}
+.disc-tag{font-size:11px;padding:2px 8px;border-radius:12px}
+.disc-body{padding:12px 14px;display:none}
+.topic{padding:6px 0;border-bottom:0.5px solid var(--color-border-tertiary);display:flex;align-items:flex-start;gap:10px}
+.topic:last-child{border-bottom:none}
+.topic-dot{width:6px;height:6px;border-radius:50%;margin-top:7px;flex-shrink:0}
+.topic-text{font-size:13px;color:var(--color-text-primary);flex:1}
+.yt-link{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#0F6E56;text-decoration:none;background:#E1F5EE;padding:3px 8px;border-radius:12px;margin-top:4px;border:0.5px solid #5DCAA5}
+.yt-link:hover{background:#9FE1CB}
+.timeline{display:flex;gap:0;margin-bottom:1.5rem;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden}
+.tl-item{flex:1;padding:10px 8px;text-align:center;font-size:12px;border-right:0.5px solid var(--color-border-tertiary)}
+.tl-item:last-child{border-right:none}
+.tl-label{color:var(--color-text-secondary);font-size:11px}
+.tl-date{font-weight:500;font-size:12px;margin-top:2px}
+.arrow{font-size:11px;color:var(--color-text-secondary)}
+.toggle-icon{font-size:14px;transition:transform 0.2s;color:var(--color-text-secondary)}
+.open .toggle-icon{transform:rotate(180deg)}
+.progress-bar{height:6px;background:var(--color-background-secondary);border-radius:3px;overflow:hidden;margin-top:6px}
+.progress-fill{height:100%;border-radius:3px}
+.alert-box{background:var(--color-background-warning);border:0.5px solid var(--color-border-warning);border-radius:var(--border-radius-md);padding:10px 14px;margin-bottom:1rem;font-size:13px;color:var(--color-text-warning)}
+.weekly{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:1.5rem}
+.day{background:var(--color-background-secondary);border-radius:6px;padding:6px 4px;text-align:center;font-size:11px}
+.day-name{color:var(--color-text-secondary);margin-bottom:3px}
+.day-content{font-weight:500;font-size:10px;line-height:1.3}
+.blue-badge{background:#E6F1FB;color:#0C447C;border:0.5px solid #85B7EB}
+.green-badge{background:#EAF3DE;color:#3B6D11;border:0.5px solid #97C459}
+.amber-badge{background:#FAEEDA;color:#854F0B;border:0.5px solid #EF9F27}
+.red-badge{background:#FCEBEB;color:#A32D2D;border:0.5px solid #F09595}
+.purple-badge{background:#EEEDFE;color:#3C3489;border:0.5px solid #AFA9EC}
+.blue-dot{background:#378ADD}
+.green-dot{background:#639922}
+.amber-dot{background:#BA7517}
+.purple-dot{background:#7F77DD}
+.teal-dot{background:#1D9E75}
+</style>
+
+<div style="padding:0 0 2rem">
+
+<div class="header">
+  <h2 style="font-size:18px;font-weight:500">Plano de estudos — Concurso RN 001/2026</h2>
+  <p class="subtitle">Nível médio · Bloco 1 (DETRAN/RN + IPERN/RN) · 5–6h/dia · Prova: 31/05/2026</p>
+</div>
+
+<div class="alert-box">
+  Hoje é 06/04/2026. Faltam <strong>55 dias</strong> até a prova (31/05). Com 5–6h diárias, você tem aproximadamente <strong>275–330 horas</strong> de estudo disponíveis. É suficiente — use bem!
+</div>
+
+<div class="meta-grid">
+  <div class="meta-card">
+    <div class="meta-label">Dias até a prova</div>
+    <div class="meta-value" style="color:#D85A30">55</div>
+  </div>
+  <div class="meta-card">
+    <div class="meta-label">Horas totais</div>
+    <div class="meta-value" style="color:#1D9E75">~300h</div>
+  </div>
+  <div class="meta-card">
+    <div class="meta-label">Disciplinas</div>
+    <div class="meta-value">7</div>
+  </div>
+  <div class="meta-card">
+    <div class="meta-label">Questões na prova</div>
+    <div class="meta-value">83</div>
+  </div>
+</div>
+
+<div class="timeline">
+  <div class="tl-item" style="background:#E1F5EE">
+    <div class="tl-label">Fase 1</div>
+    <div class="tl-date" style="color:#0F6E56">06/04–22/04</div>
+    <div style="font-size:10px;color:#0F6E56;margin-top:2px">Base (17 dias)</div>
+  </div>
+  <div class="tl-item" style="background:#E6F1FB">
+    <div class="tl-label">Fase 2</div>
+    <div class="tl-date" style="color:#185FA5">23/04–12/05</div>
+    <div style="font-size:10px;color:#185FA5;margin-top:2px">Específicos (20 dias)</div>
+  </div>
+  <div class="tl-item" style="background:#FAEEDA">
+    <div class="tl-label">Fase 3</div>
+    <div class="tl-date" style="color:#854F0B">13/05–27/05</div>
+    <div style="font-size:10px;color:#854F0B;margin-top:2px">Revisão (15 dias)</div>
+  </div>
+  <div class="tl-item" style="background:#FCEBEB">
+    <div class="tl-label">Prova</div>
+    <div class="tl-date" style="color:#A32D2D">31/05/2026</div>
+    <div style="font-size:10px;color:#A32D2D;margin-top:2px">Sábado, manhã</div>
+  </div>
+</div>
+
+<p style="font-size:14px;font-weight:500;margin-bottom:10px">Rotina semanal recomendada</p>
+<div class="weekly" style="margin-bottom:1.5rem">
+  <div class="day"><div class="day-name">Seg</div><div class="day-content">Port.<br>2h + Dir.Const<br>3h</div></div>
+  <div class="day"><div class="day-name">Ter</div><div class="day-content">Dir.Const<br>2h + Hist.RN<br>3h</div></div>
+  <div class="day"><div class="day-name">Qua</div><div class="day-content">Ética<br>2h + Leg.Trân<br>3h</div></div>
+  <div class="day"><div class="day-name">Qui</div><div class="day-content">Leg.Trân<br>2h + C.Área<br>3h</div></div>
+  <div class="day"><div class="day-name">Sex</div><div class="day-content">C.Área<br>2h + Leg.Est<br>3h</div></div>
+  <div class="day"><div class="day-name">Sáb</div><div class="day-content">Simulado<br>4h + Rev<br>2h</div></div>
+  <div class="day"><div class="day-name">Dom</div><div class="day-content">Revisão<br>leve<br>2h</div></div>
+</div>
+
+<p style="font-size:14px;font-weight:500;margin-bottom:10px">Clique em cada fase e disciplina para ver os tópicos e videoaulas</p>
+
+<div class="fase" id="f1">
+  <div class="fase-header" onclick="toggleFase('f1')">
+    <div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="fase-title">Fase 1 — Conhecimentos gerais (base)</span>
+        <span class="fase-badge green-badge">06/04 → 22/04</span>
+      </div>
+      <div class="fase-meta">Língua Portuguesa · Direito Constitucional · Ética · História do RN — 17 dias</div>
+    </div>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="fase-body" id="f1-body">
+
+    <div class="disc" id="d1">
+      <div class="disc-header" onclick="toggleDisc('d1')">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="disc-name">Língua Portuguesa</span>
+          <span class="disc-tag blue-badge">15 questões · 15 pts</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="font-size:11px;color:var(--color-text-secondary)">Prioridade: alta</span>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="disc-body" id="d1-body">
+        <p style="font-size:12px;color:var(--color-text-secondary);margin-bottom:8px">Dedique 20–25h. Pratique leitura diariamente. Foque em interpretação e gramática aplicada.</p>
+        <div class="topic"><div class="topic-dot blue-dot"></div><div><div class="topic-text">Compreensão e interpretação de textos — tipos e gêneros textuais</div><a class="yt-link" href="https://www.youtube.com/results?search_query=interpretacao+de+texto+concurso+publico+basico" target="_blank">▶ Buscar no YouTube</a></div></div>
+        <div class="topic"><div class="topic-dot blue-dot"></div><div><div class="topic-text">Ortografia oficial — uso do hífen, maiúsculas, acentuação gráfica</div><a class="yt-link" href="https://www.youtube.com/watch?v=4QFPFmQ3HQA" target="_blank">▶ Ortografia — Prof. Noslen</a></div></div>
+        <div class="topic"><div class="topic-dot blue-dot"></div><div><div class="topic-text">Classes de palavras variáveis e invariáveis e suas funções no texto</div><a class="yt-link" href="https://www.youtube.com/watch?v=WJl7VK-FKLA" target="_blank">▶ Classes de palavras — Gramática</a></div></div>
+        <div class="topic"><div class="topic-dot blue-dot"></div><div><div class="topic-text">Concordância verbal e nominal</div><a class="yt-link" href="https://www.youtube.com/results?search_query=concordancia+verbal+nominal+concurso+publico" target="_blank">▶ Buscar: concordância verbal concurso</a></div></div>
+        <div class="topic"><div class="topic-dot blue-dot"></div><div><div class="topic-text">Sintaxe — termos essenciais, integrantes e acessórios da oração; tipos de predicado</div><a class="yt-link" href="https://www.youtube.com/results?search_query=sintaxe+da+oracao+concurso+publico" target="_blank">▶ Buscar: sintaxe concurso público</a></div></div>
+        <div class="topic"><div class="topic-dot blue-dot"></div><div><div class="topic-text">Colocação pronominal — próclise, ênclise, mesóclise</div><a class="yt-link" href="https://www.youtube.com/results?search_query=colocacao+pronominal+concurso" target="_blank">▶ Buscar: colocação pronominal</a></div></div>
+        <div class="topic"><div class="topic-dot blue-dot"></div><div><div class="topic-text">Tempos simples dos verbos · Conjugações verbais</div><a class="yt-link" href="https://www.youtube.com/results?search_query=conjugacao+verbal+concurso+portugues" target="_blank">▶ Buscar: conjugações verbais</a></div></div>
+        <div class="topic"><div class="topic-dot blue-dot"></div><div><div class="topic-text">Usos dos "porquês" · Uso de "mau" e "mal" · Dígrafos e encontros</div><a class="yt-link" href="https://www.youtube.com/results?search_query=porques+gramatica+concurso" target="_blank">▶ Buscar: os quatro porquês</a></div></div>
+        <div class="topic"><div class="topic-dot blue-dot"></div><div><div class="topic-text">Processos de formação de palavras — derivação, composição e outros</div><a class="yt-link" href="https://www.youtube.com/results?search_query=formacao+de+palavras+derivacao+composicao+concurso" target="_blank">▶ Buscar: formação de palavras</a></div></div>
+      </div>
+    </div>
+
+    <div class="disc" id="d2">
+      <div class="disc-header" onclick="toggleDisc('d2')">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="disc-name">Noções de Direito Constitucional e Administrativo</span>
+          <span class="disc-tag purple-badge">10 questões · 20 pts</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="font-size:11px;color:var(--color-text-secondary)">Prioridade: muito alta</span>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="disc-body" id="d2-body">
+        <p style="font-size:12px;color:var(--color-text-secondary);margin-bottom:8px">Cada questão vale 2 pts! Dedique 25–30h. Maior peso da prova nos gerais.</p>
+        <div class="topic"><div class="topic-dot purple-dot"></div><div><div class="topic-text">Constituição Federal — conceito, classificações, princípios fundamentais (arts. 1º ao 4º)</div><a class="yt-link" href="https://www.youtube.com/results?search_query=principios+fundamentais+constituicao+federal+concurso" target="_blank">▶ Buscar: princípios fundamentais CF</a></div></div>
+        <div class="topic"><div class="topic-dot purple-dot"></div><div><div class="topic-text">Direitos e garantias fundamentais — direitos individuais e coletivos (art. 5º)</div><a class="yt-link" href="https://www.youtube.com/results?search_query=direitos+fundamentais+art+5+concurso+publico" target="_blank">▶ Buscar: art. 5º direitos fundamentais</a></div></div>
+        <div class="topic"><div class="topic-dot purple-dot"></div><div><div class="topic-text">Direitos sociais (arts. 6º a 11) · Nacionalidade · Cidadania · Direitos políticos</div><a class="yt-link" href="https://www.youtube.com/results?search_query=direitos+sociais+art+6+constituicao+concurso" target="_blank">▶ Buscar: direitos sociais CF concurso</a></div></div>
+        <div class="topic"><div class="topic-dot purple-dot"></div><div><div class="topic-text">Organização político-administrativa — União, estados, DF, municípios, territórios</div><a class="yt-link" href="https://www.youtube.com/results?search_query=organizacao+politico+administrativa+brasil+concurso" target="_blank">▶ Buscar: organização político-admin</a></div></div>
+        <div class="topic"><div class="topic-dot purple-dot"></div><div><div class="topic-text">Partidos políticos · Organização do Estado</div><a class="yt-link" href="https://www.youtube.com/results?search_query=partidos+politicos+constituicao+concurso" target="_blank">▶ Buscar: partidos políticos CF</a></div></div>
+      </div>
+    </div>
+
+    <div class="disc" id="d3">
+      <div class="disc-header" onclick="toggleDisc('d3')">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="disc-name">Ética no Serviço Público</span>
+          <span class="disc-tag green-badge">6 questões · 6 pts</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="font-size:11px;color:var(--color-text-secondary)">Prioridade: alta</span>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="disc-body" id="d3-body">
+        <p style="font-size:12px;color:var(--color-text-secondary);margin-bottom:8px">Matéria relativamente fácil. 8–10h são suficientes. Leia os decretos e lei indicados no edital.</p>
+        <div class="topic"><div class="topic-dot teal-dot"></div><div><div class="topic-text">Ética e moral — princípios e valores · Ética e democracia/cidadania</div><a class="yt-link" href="https://www.youtube.com/results?search_query=etica+servico+publico+concurso+basico" target="_blank">▶ Buscar: ética serviço público</a></div></div>
+        <div class="topic"><div class="topic-dot teal-dot"></div><div><div class="topic-text">Ética e função pública · Ética no setor público</div><a class="yt-link" href="https://www.youtube.com/results?search_query=etica+funcao+publica+concurso" target="_blank">▶ Buscar: ética e função pública</a></div></div>
+        <div class="topic"><div class="topic-dot teal-dot"></div><div><div class="topic-text">Lei Complementar Estadual RN n.º 122/1994 — Estatuto dos Servidores (arts. relevantes)</div><a class="yt-link" href="https://www.youtube.com/results?search_query=codigo+etica+servidor+publico+concurso" target="_blank">▶ Buscar: código de ética servidor</a></div></div>
+        <div class="topic"><div class="topic-dot teal-dot"></div><div><div class="topic-text">Decreto Estadual n.º 33.094/2023 — Código de Ética Profissional do Servidor RN</div><a class="yt-link" href="https://www.youtube.com/results?search_query=lei+assedio+moral+servidor+publico+concurso" target="_blank">▶ Buscar: assédio moral serviço público</a></div></div>
+        <div class="topic"><div class="topic-dot teal-dot"></div><div><div class="topic-text">Lei Estadual n.º 11.902/2024 — Prevenção ao assédio moral e sexual</div><a class="yt-link" href="https://www.youtube.com/results?search_query=assedio+moral+sexual+administracao+publica+concurso" target="_blank">▶ Buscar: assédio moral administração pública</a></div></div>
+      </div>
+    </div>
+
+    <div class="disc" id="d4">
+      <div class="disc-header" onclick="toggleDisc('d4')">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="disc-name">História do RN e Aspectos Geoeconômicos</span>
+          <span class="disc-tag amber-badge">10 questões · 10 pts</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="font-size:11px;color:var(--color-text-secondary)">Prioridade: média</span>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="disc-body" id="d4-body">
+        <p style="font-size:12px;color:var(--color-text-secondary);margin-bottom:8px">Estude o conteúdo específico do RN. 12–15h. Muitos tópicos são únicos do estado.</p>
+        <div class="topic"><div class="topic-dot" style="background:#BA7517"></div><div><div class="topic-text">Capitania do Rio Grande na história das capitanias donatárias (séc. XVI)</div><a class="yt-link" href="https://www.youtube.com/results?search_query=historia+rio+grande+do+norte+capitania+concurso" target="_blank">▶ Buscar: história RN capitania</a></div></div>
+        <div class="topic"><div class="topic-dot" style="background:#BA7517"></div><div><div class="topic-text">Indígenas nos sertões · Economia e fiscalidade colonial · Arrecadação de tributos</div><a class="yt-link" href="https://www.youtube.com/results?search_query=historia+rio+grande+norte+colonial" target="_blank">▶ Buscar: RN colonial historia</a></div></div>
+        <div class="topic"><div class="topic-dot" style="background:#BA7517"></div><div><div class="topic-text">A seca e a questão sanitária séc. XIX · Terra dos salineiros · Trabalhadores da extração de sal</div><a class="yt-link" href="https://www.youtube.com/results?search_query=historia+rio+grande+norte+seculo+XIX+seca" target="_blank">▶ Buscar: RN século XIX sal seca</a></div></div>
+        <div class="topic"><div class="topic-dot" style="background:#BA7517"></div><div><div class="topic-text">Abolicionismo de vanguarda mossoroense · Motim das Mulheres</div><a class="yt-link" href="https://www.youtube.com/results?search_query=abolicionismo+mossoro+historia+RN" target="_blank">▶ Buscar: Mossoró abolicionismo</a></div></div>
+        <div class="topic"><div class="topic-dot" style="background:#BA7517"></div><div><div class="topic-text">O Mossoroense — jornal mais antigo do Brasil · Mossoró e resistência a Lampião</div><a class="yt-link" href="https://www.youtube.com/results?search_query=lampiao+mossoro+resistencia+historia" target="_blank">▶ Buscar: Lampião Mossoró</a></div></div>
+        <div class="topic"><div class="topic-dot" style="background:#BA7517"></div><div><div class="topic-text">Movimento de 1930 no RN · Barreira do Inferno/Trampolim da Vitória — 2ª Guerra</div><a class="yt-link" href="https://www.youtube.com/results?search_query=rio+grande+norte+segunda+guerra+mundial+barreira+inferno" target="_blank">▶ Buscar: RN Segunda Guerra Mundial</a></div></div>
+        <div class="topic"><div class="topic-dot" style="background:#BA7517"></div><div><div class="topic-text">Populações Indígenas e Comunidades Quilombolas no RN</div><a class="yt-link" href="https://www.youtube.com/results?search_query=indigenas+quilombolas+rio+grande+norte" target="_blank">▶ Buscar: indígenas quilombolas RN</a></div></div>
+        <div class="topic"><div class="topic-dot" style="background:#BA7517"></div><div><div class="topic-text">Atividades econômicas — agropecuária, pesca, fruticultura, carcinicultura, mineração, sal, petróleo</div><a class="yt-link" href="https://www.youtube.com/results?search_query=economia+rio+grande+norte+aspectos+geograficos" target="_blank">▶ Buscar: economia RN aspectos geoeconômicos</a></div></div>
+        <div class="topic"><div class="topic-dot" style="background:#BA7517"></div><div><div class="topic-text">Energias renováveis (eólica e solar) no panorama econômico e geográfico do RN</div><a class="yt-link" href="https://www.youtube.com/results?search_query=energia+eolica+rio+grande+norte+economia" target="_blank">▶ Buscar: energia eólica RN</a></div></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="fase" id="f2">
+  <div class="fase-header" onclick="toggleFase('f2')">
+    <div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="fase-title">Fase 2 — Conhecimentos específicos</span>
+        <span class="fase-badge blue-badge">23/04 → 12/05</span>
+      </div>
+      <div class="fase-meta">Legislação de Trânsito · Conhecimento da Área de Formação (Administ.) · Leg. Estadual/Previdenciário — 20 dias</div>
+    </div>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="fase-body" id="f2-body">
+
+    <div class="disc" id="d5">
+      <div class="disc-header" onclick="toggleDisc('d5')">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="disc-name">Legislação de Trânsito — CTB (Lei 9.503/97)</span>
+          <span class="disc-tag red-badge">13 questões · 26 pts</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="font-size:11px;color:var(--color-text-secondary)">Prioridade: muito alta</span>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="disc-body" id="d5-body">
+        <p style="font-size:12px;color:var(--color-text-secondary);margin-bottom:8px">26 pontos! A matéria mais pesada da prova. Dedique 30–35h. Leia os capítulos do CTB cobrados: I, II, III, V, VII, XIV, XV, XVI, XVII e XIX.</p>
+        <div class="topic"><div class="topic-dot" style="background:#E24B4A"></div><div><div class="topic-text">Cap. I — Disposições preliminares · Cap. II — Sistema Nacional de Trânsito</div><a class="yt-link" href="https://www.youtube.com/results?search_query=codigo+transito+brasileiro+CTB+capitulo+1+2+concurso" target="_blank">▶ Buscar: CTB capítulos 1 e 2</a></div></div>
+        <div class="topic"><div class="topic-dot" style="background:#E24B4A"></div><div><div class="topic-text">Cap. III — Normas gerais de circulação e conduta</div><a class="yt-link" href="https://www.youtube.com/results?search_query=CTB+normas+circulacao+conduta+concurso" target="_blank">▶ Buscar: CTB normas circulação</a></div></div>
+        <div class="topic"><div class="topic-dot" style="background:#E24B4A"></div><div><div class="topic-text">Cap. V — Das infrações · Cap. VII — Da habilitação</div><a class="yt-link" href="https://www.youtube.com/results?search_query=CTB+infracoes+habilitacao+capitulo+5+7" target="_blank">▶ Buscar: CTB infrações e habilitação</a></div></div>
+        <div class="topic"><div class="topic-dot" style="background:#E24B4A"></div><div><div class="topic-text">Cap. XIV — Veículos · Cap. XV — Da segurança e sinalização</div><a class="yt-link" href="https://www.youtube.com/results?search_query=CTB+veiculos+sinalizacao+capitulo+14+15" target="_blank">▶ Buscar: CTB veículos sinalização</a></div></div>
+        <div class="topic"><div class="topic-dot" style="background:#E24B4A"></div><div><div class="topic-text">Cap. XVI — Do registro · Cap. XVII — Do licenciamento · Cap. XIX — Das disposições finais</div><a class="yt-link" href="https://www.youtube.com/results?search_query=CTB+registro+licenciamento+capitulo+16+17+19" target="_blank">▶ Buscar: CTB registro licenciamento</a></div></div>
+        <div class="topic"><div class="topic-dot" style="background:#E24B4A"></div><div><div class="topic-text">Resoluções CONTRAN — Resolução 432 (testes de alcoolemia) e normas de segurança</div><a class="yt-link" href="https://www.youtube.com/results?search_query=resolucao+CONTRAN+432+transito+concurso" target="_blank">▶ Buscar: Resolução CONTRAN 432</a></div></div>
+      </div>
+    </div>
+
+    <div class="disc" id="d6">
+      <div class="disc-header" onclick="toggleDisc('d6')">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="disc-name">Conhecimento da Área — Administração (DETRAN)</span>
+          <span class="disc-tag blue-badge">12 questões · 24 pts</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="font-size:11px;color:var(--color-text-secondary)">Prioridade: muito alta</span>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="disc-body" id="d6-body">
+        <p style="font-size:12px;color:var(--color-text-secondary);margin-bottom:8px">Também 24 pts. Dedique 30h. Vasto conteúdo — priorize o que mais cai em concursos de nível médio.</p>
+        <div class="topic"><div class="topic-dot blue-dot"></div><div><div class="topic-text">Funções da Administração — planejamento, organização, direção, controle (PODC)</div><a class="yt-link" href="https://www.youtube.com/results?search_query=funcoes+administracao+PODC+concurso+publico" target="_blank">▶ Buscar: funções admin PODC concurso</a></div></div>
+        <div class="topic"><div class="topic-dot blue-dot"></div><div><div class="topic-text">Tomada de decisão · Aplicações práticas na administração pública</div><a class="yt-link" href="https://www.youtube.com/results?search_query=tomada+de+decisao+administracao+publica+concurso" target="_blank">▶ Buscar: tomada decisão adm pública</a></div></div>
+        <div class="topic"><div class="topic-dot blue-dot"></div><div><div class="topic-text">Comunicação Organizacional — verbal, não verbal, formal, informal, barreiras</div><a class="yt-link" href="https://www.youtube.com/results?search_query=comunicacao+organizacional+concurso+publico" target="_blank">▶ Buscar: comunicação organizacional</a></div></div>
+        <div class="topic"><div class="topic-dot blue-dot"></div><div><div class="topic-text">Redação oficial e administrativa · Técnicas de atendimento ao público</div><a class="yt-link" href="https://www.youtube.com/results?search_query=redacao+oficial+manual+presidencia+republica+concurso" target="_blank">▶ Buscar: redação oficial concurso</a></div></div>
+        <div class="topic"><div class="topic-dot blue-dot"></div><div><div class="topic-text">Administração de Pessoas — recrutamento, seleção, treinamento, avaliação de desempenho</div><a class="yt-link" href="https://www.youtube.com/results?search_query=gestao+pessoas+recrutamento+selecao+concurso" target="_blank">▶ Buscar: gestão pessoas concurso</a></div></div>
+        <div class="topic"><div class="topic-dot blue-dot"></div><div><div class="topic-text">Motivação e clima organizacional · Liderança e delegação · Relações interpessoais</div><a class="yt-link" href="https://www.youtube.com/results?search_query=motivacao+lideranca+clima+organizacional+concurso" target="_blank">▶ Buscar: motivação liderança concurso</a></div></div>
+        <div class="topic"><div class="topic-dot blue-dot"></div><div><div class="topic-text">Gestão da Qualidade — princípios, melhoria contínua, qualidade no atendimento ao cidadão</div><a class="yt-link" href="https://www.youtube.com/results?search_query=gestao+qualidade+melhoria+continua+concurso+publico" target="_blank">▶ Buscar: gestão qualidade concurso</a></div></div>
+        <div class="topic"><div class="topic-dot blue-dot"></div><div><div class="topic-text">Arquivologia e Gestão de Documentos — tipos de arquivo, métodos de arquivamento</div><a class="yt-link" href="https://www.youtube.com/results?search_query=arquivologia+gestao+documentos+concurso+publico" target="_blank">▶ Buscar: arquivologia concurso público</a></div></div>
+        <div class="topic"><div class="topic-dot blue-dot"></div><div><div class="topic-text">Correspondência oficial — ofício, memorando, ata, requerimento, despacho, portaria</div><a class="yt-link" href="https://www.youtube.com/results?search_query=correspondencia+oficial+formas+documentos+concurso" target="_blank">▶ Buscar: correspondência oficial concurso</a></div></div>
+        <div class="topic"><div class="topic-dot blue-dot"></div><div><div class="topic-text">Administração Geral — estrutura organizacional, níveis estratégico/tático/operacional</div><a class="yt-link" href="https://www.youtube.com/results?search_query=estrutura+organizacional+niveis+hierarquicos+concurso" target="_blank">▶ Buscar: estrutura organizacional concurso</a></div></div>
+        <div class="topic"><div class="topic-dot blue-dot"></div><div><div class="topic-text">Noções de Administração Financeira e Orçamentária — orçamento público, receitas, despesas</div><a class="yt-link" href="https://www.youtube.com/results?search_query=orcamento+publico+basico+concurso+nivel+medio" target="_blank">▶ Buscar: orçamento público nível médio</a></div></div>
+        <div class="topic"><div class="topic-dot blue-dot"></div><div><div class="topic-text">Prestação de contas · Controle interno e externo na administração pública</div><a class="yt-link" href="https://www.youtube.com/results?search_query=controle+interno+externo+administracao+publica+concurso" target="_blank">▶ Buscar: controle interno externo</a></div></div>
+      </div>
+    </div>
+
+    <div class="disc" id="d7">
+      <div class="disc-header" onclick="toggleDisc('d7')">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="disc-name">Legislação Estadual Específica + Noções de Dir. Previdenciário (IPERN)</span>
+          <span class="disc-tag green-badge">20 questões · 40 pts (Bloco IPERN)</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="font-size:11px;color:var(--color-text-secondary)">Prioridade: alta</span>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="disc-body" id="d7-body">
+        <p style="font-size:12px;color:var(--color-text-secondary);margin-bottom:8px">Para quem for ao bloco IPERN. Legislação específica do RN e noções previdenciárias. 25h.</p>
+        <div class="topic"><div class="topic-dot teal-dot"></div><div><div class="topic-text">Constituição Estadual do RN (1989) — organização do estado, poderes e direitos</div><a class="yt-link" href="https://www.youtube.com/results?search_query=constituicao+estadual+rio+grande+norte+concurso" target="_blank">▶ Buscar: Constituição Estadual RN</a></div></div>
+        <div class="topic"><div class="topic-dot teal-dot"></div><div><div class="topic-text">LC n.º 122/1994 — Estatuto dos Servidores Públicos Civis do RN</div><a class="yt-link" href="https://www.youtube.com/results?search_query=estatuto+servidor+publico+civil+regime+juridico+concurso" target="_blank">▶ Buscar: estatuto servidor público</a></div></div>
+        <div class="topic"><div class="topic-dot teal-dot"></div><div><div class="topic-text">Finalidades e princípios básicos da Previdência Social · Seguridade social</div><a class="yt-link" href="https://www.youtube.com/results?search_query=previdencia+social+principios+basicos+concurso" target="_blank">▶ Buscar: previdência social princípios</a></div></div>
+        <div class="topic"><div class="topic-dot teal-dot"></div><div><div class="topic-text">Dos regimes da Previdência Social — Regime Geral e RPPS</div><a class="yt-link" href="https://www.youtube.com/results?search_query=RGPS+RPPS+regime+geral+previdencia+concurso" target="_blank">▶ Buscar: RGPS RPPS concurso</a></div></div>
+        <div class="topic"><div class="topic-dot teal-dot"></div><div><div class="topic-text">Prestações e benefícios · Contribuições da União, segurado, empresa, empregador doméstico</div><a class="yt-link" href="https://www.youtube.com/results?search_query=beneficios+previdencia+social+contribuicoes+concurso" target="_blank">▶ Buscar: benefícios previdência concurso</a></div></div>
+        <div class="topic"><div class="topic-dot teal-dot"></div><div><div class="topic-text">Salário de contribuição · Acidente de trabalho · Seguro desemprego · Aposentadorias</div><a class="yt-link" href="https://www.youtube.com/results?search_query=salario+contribuicao+previdencia+aposentadoria+concurso" target="_blank">▶ Buscar: salário contribuição aposentadoria</a></div></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="fase" id="f3">
+  <div class="fase-header" onclick="toggleFase('f3')">
+    <div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="fase-title">Fase 3 — Revisão intensiva e simulados</span>
+        <span class="fase-badge amber-badge">13/05 → 27/05</span>
+      </div>
+      <div class="fase-meta">Revisão de todos os conteúdos + simulados cronometrados + questões comentadas — 15 dias</div>
+    </div>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="fase-body" id="f3-body">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px">
+      <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px">
+        <p style="font-size:13px;font-weight:500;margin-bottom:8px">Estratégia de revisão</p>
+        <div class="topic"><div class="topic-dot teal-dot"></div><div class="topic-text" style="font-size:12px">Releia anotações de cada disciplina (1–2h/cada)</div></div>
+        <div class="topic"><div class="topic-dot teal-dot"></div><div class="topic-text" style="font-size:12px">Resolva 100 questões por semana — foco nas que mais errou</div></div>
+        <div class="topic"><div class="topic-dot teal-dot"></div><div class="topic-text" style="font-size:12px">Faça 2 simulados completos cronometrados (4h cada)</div></div>
+        <div class="topic"><div class="topic-dot teal-dot"></div><div class="topic-text" style="font-size:12px">Revise o CTB lendo os artigos dos capítulos cobrados</div></div>
+        <div class="topic"><div class="topic-dot teal-dot"></div><div class="topic-text" style="font-size:12px">Na última semana: só revisão leve — sem conteúdo novo</div></div>
+      </div>
+      <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px">
+        <p style="font-size:13px;font-weight:500;margin-bottom:8px">Plataformas de questões gratuitas</p>
+        <div class="topic"><div class="topic-dot blue-dot"></div><div><a class="yt-link" href="https://www.qconcursos.com" target="_blank">▶ QConcursos.com</a></div></div>
+        <div class="topic"><div class="topic-dot blue-dot"></div><div><a class="yt-link" href="https://www.pciconcursos.com.br" target="_blank">▶ PCI Concursos</a></div></div>
+        <div class="topic"><div class="topic-dot blue-dot"></div><div><a class="yt-link" href="https://www.estrategiaconcursos.com.br" target="_blank">▶ Estratégia Concursos</a></div></div>
+        <div class="topic"><div class="topic-dot blue-dot"></div><div><a class="yt-link" href="https://www.tecconcursos.com.br" target="_blank">▶ TEC Concursos</a></div></div>
+        <div class="topic"><div class="topic-dot blue-dot"></div><div><a class="yt-link" href="https://www.youtube.com/results?search_query=simulado+concurso+nivel+medio+2025" target="_blank">▶ Simulados no YouTube</a></div></div>
+      </div>
+    </div>
+
+    <div style="margin-top:12px;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:12px">
+      <p style="font-size:13px;font-weight:500;margin-bottom:8px">Checklist — últimas 72h antes da prova (28–30/05)</p>
+      <div class="topic"><div class="topic-dot teal-dot"></div><div class="topic-text" style="font-size:12px">Confirme no site www.avalia.org.br o local e horário exatos da prova</div></div>
+      <div class="topic"><div class="topic-dot teal-dot"></div><div class="topic-text" style="font-size:12px">Separe o documento oficial de identidade com foto (RG, CNH, CIN)</div></div>
+      <div class="topic"><div class="topic-dot teal-dot"></div><div class="topic-text" style="font-size:12px">Separe caneta esferográfica transparente de tinta azul ou preta</div></div>
+      <div class="topic"><div class="topic-dot teal-dot"></div><div class="topic-text" style="font-size:12px">Imprima o Cartão de Informação do Candidato</div></div>
+      <div class="topic"><div class="topic-dot teal-dot"></div><div class="topic-text" style="font-size:12px">Chegue 60 min antes do fechamento dos portões (horário no cartão)</div></div>
+      <div class="topic"><div class="topic-dot teal-dot"></div><div class="topic-text" style="font-size:12px">Proibido: celular, relógio, calculadora, boné, óculos escuros</div></div>
+    </div>
+  </div>
+</div>
+
+<div style="margin-top:1rem;padding:12px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);font-size:12px;color:var(--color-text-secondary);line-height:1.6">
+  <strong style="color:var(--color-text-primary)">Pontuação mínima para aprovação:</strong> 60% do total em cada cargo/órgão. Não zere nenhuma disciplina. Priorize Legislação de Trânsito (26 pts) e Conhecimento da Área (24 pts) — juntas valem 50 dos 95 pontos possíveis.
+</div>
+
+</div>
+
+<script>
+function toggleFase(id){
+  const body=document.getElementById(id+'-body');
+  const header=document.getElementById(id);
+  const icon=header.querySelector('.toggle-icon');
+  const isOpen=body.style.display==='block';
+  body.style.display=isOpen?'none':'block';
+  icon.style.transform=isOpen?'rotate(0deg)':'rotate(180deg)';
+}
+function toggleDisc(id){
+  const body=document.getElementById(id+'-body');
+  const header=document.getElementById(id);
+  const icon=header.querySelector('.toggle-icon');
+  const isOpen=body.style.display==='block';
+  body.style.display=isOpen?'none':'block';
+  icon.style.transform=isOpen?'rotate(0deg)':'rotate(180deg)';
+}
+</script>
